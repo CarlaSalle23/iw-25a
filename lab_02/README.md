@@ -55,6 +55,9 @@ CMD ["nginx", "-g", "daemon off;"]
    docker build -t lab02_test .
    docker run -p 8098:80 lab02_test
    ```
+2. Abre en tu navegador:
+👉 [http://localhost:8098](http://localhost:8098)
+---
 ## ✍️ Autor
 
 Desarrollado por Carla Fernanda Ropa Calizaya.
