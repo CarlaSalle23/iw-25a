@@ -1,0 +1,19 @@
+body {
+  background-color: #f5f5f5; 
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.sub {
+  color: navy;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#parrafo {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: underline;
+}
