@@ -4,8 +4,14 @@ from rest_framework import status
 from .models import Silabo
 from .serializers import SilaboSerializer
 from django.shortcuts import get_object_or_404
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 class SilaboList(APIView):
+
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request):
         silabos = Silabo.objects.all()
         serializer = SilaboSerializer(silabos, many=True)
@@ -19,6 +25,10 @@ class SilaboList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class SilaboDetail(APIView):
+
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
     def get(self, request, pk):
         silabo = get_object_or_404(Silabo, pk=pk)
         serializer = SilaboSerializer(silabo)
